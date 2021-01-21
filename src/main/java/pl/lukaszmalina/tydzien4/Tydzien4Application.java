@@ -1,4 +1,4 @@
-package pl.lukaszmalina.tydzien3;
+package pl.lukaszmalina.tydzien4;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,10 +18,10 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableSwagger2
-public class Tydzien3Application {
+public class Tydzien4Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Tydzien3Application.class, args);
+        SpringApplication.run(Tydzien4Application.class, args);
     }
 
     @Bean

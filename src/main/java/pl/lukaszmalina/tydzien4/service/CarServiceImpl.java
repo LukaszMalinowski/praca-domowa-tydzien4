@@ -1,9 +1,9 @@
-package pl.lukaszmalina.tydzien3.service;
+package pl.lukaszmalina.tydzien4.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.lukaszmalina.tydzien3.entity.Car;
-import pl.lukaszmalina.tydzien3.repository.CarRepository;
+import pl.lukaszmalina.tydzien4.entity.Car;
+import pl.lukaszmalina.tydzien4.repository.CarRepository;
 
 import java.util.List;
 import java.util.Optional;

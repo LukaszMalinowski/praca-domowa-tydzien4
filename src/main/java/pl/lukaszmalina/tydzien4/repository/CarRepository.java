@@ -1,7 +1,7 @@
-package pl.lukaszmalina.tydzien3.repository;
+package pl.lukaszmalina.tydzien4.repository;
 
 import org.springframework.stereotype.Repository;
-import pl.lukaszmalina.tydzien3.entity.Car;
+import pl.lukaszmalina.tydzien4.entity.Car;
 
 import java.util.ArrayList;
 import java.util.List;

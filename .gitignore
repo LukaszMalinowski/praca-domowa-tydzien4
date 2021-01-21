@@ -32,7 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 
-## Maven:
+### Maven ###
 !.mvn/wrapper/maven-wrapper.jar
 /.mvn/
 /mvnw
@@ -45,3 +45,8 @@ pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.next
 release.properties
+
+### Vaadin ###
+node_modules/
+*.json
+*.js

@@ -1,4 +1,4 @@
-package pl.lukaszmalina.tydzien3.entity;
+package pl.lukaszmalina.tydzien4.entity;
 
 import org.springframework.hateoas.RepresentationModel;
 

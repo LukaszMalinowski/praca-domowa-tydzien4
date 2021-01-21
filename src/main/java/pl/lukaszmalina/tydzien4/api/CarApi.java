@@ -1,16 +1,15 @@
-package pl.lukaszmalina.tydzien3.api;
+package pl.lukaszmalina.tydzien4.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import pl.lukaszmalina.tydzien3.entity.Car;
-import pl.lukaszmalina.tydzien3.service.CarService;
+import pl.lukaszmalina.tydzien4.entity.Car;
+import pl.lukaszmalina.tydzien4.service.CarService;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,8 +17,7 @@ import java.util.Optional;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
-@RequestMapping(value = "/cars",
-                produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+@RequestMapping("/api/cars")
 public class CarApi {
 
     CarService service;
