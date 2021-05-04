@@ -60,27 +60,27 @@ public class CarApi {
     }
 
     @PostMapping
-    public ResponseEntity addCar(@Validated @RequestBody Car car) {
+    public ResponseEntity<Void> addCar(@Validated @RequestBody Car car) {
         boolean isAdded = service.addCar(car);
 
         if(isAdded)
-            return new ResponseEntity(HttpStatus.CREATED);
+            return new ResponseEntity<>(HttpStatus.CREATED);
 
-        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @PutMapping
-    public ResponseEntity updateCar(@Validated @RequestBody Car car) {
+    public ResponseEntity<Void> updateCar(@Validated @RequestBody Car car) {
         boolean isAdded = service.updateCar(car);
 
         if(isAdded)
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
 
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @PatchMapping
-    public ResponseEntity updateCarField(@RequestBody Car newCar) {
+    public ResponseEntity<Void> updateCarField(@RequestBody Car newCar) {
         List<Car> cars = service.getCars();
         Optional<Car> carOptional = cars.stream().filter(oldCar -> oldCar.getId() == newCar.getId()).findFirst();
 
@@ -89,31 +89,31 @@ public class CarApi {
 
             if(newCar.getMark() != null && !newCar.getMark().isEmpty()) {
                 service.updateCar(new Car(updatedCar.getId(), newCar.getMark(), updatedCar.getModel(), updatedCar.getColor()));
-                return new ResponseEntity(HttpStatus.OK);
+                return new ResponseEntity<>(HttpStatus.OK);
             }
 
             if(newCar.getModel() != null && !newCar.getModel().isEmpty()) {
                 service.updateCar(new Car(updatedCar.getId(), updatedCar.getMark(), newCar.getModel(), updatedCar.getColor()));
-                return new ResponseEntity(HttpStatus.OK);
+                return new ResponseEntity<>(HttpStatus.OK);
             }
 
             if(newCar.getColor() != null && !newCar.getColor().isEmpty()) {
                 service.updateCar(new Car(updatedCar.getId(), updatedCar.getMark(), updatedCar.getModel(), newCar.getColor()));
-                return new ResponseEntity(HttpStatus.OK);
+                return new ResponseEntity<>(HttpStatus.OK);
             }
         }
 
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCar(@PathVariable long id) {
+    public ResponseEntity<Void> deleteCar(@PathVariable long id) {
         boolean isRemoved = service.removeCarById(id);
 
         if(isRemoved)
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
 
-        return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     void addSelfLink(Car car) {
